@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Unidades</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width height=device-height initial-scale=1.0 maximum-scale=1.0 user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="images/logos/5mLogo.svg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800%7CPoppins:300,400,700">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css" id="main-styles-link">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+      .map-container {
+        background-color: #6C9E90;
+        padding: 20px 0;
+        padding: 15px;
+        border-radius: 20px;
+      }
+      #map {
+        height: 490px;
+        width: 100%;
+        border-radius: 10px;
+      }
+      body {
+        font-family: "Onest";
+      }
+      .lote-label {
+        width: fit-content;
+        background: #1a7d84;
+        color: white;
+        padding: 4px 8px;
+        font-size: 12px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+      }
+      .lote-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+      .lote-footer {
+        min-width: 240px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+        padding: 10px;
+        border-top: 1px solid #ddd;
+      }
+      .lote-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 100%;
+        background: #6C9E90;
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-size: 16px;
+      }
+      .lote-btn:hover {
+        background: #6c9e90b6;
+      }
+      .lote-info p {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        margin: 5px 0;
+        color: #868686;
+      }
+      .lote-info span {
+        flex: 1;
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="preloader">
+      <div class="preloader-logo"><img src="images/logos/5mLogo.svg" alt="" width="151" height="44" srcset="images/logos/5mLogo.svg"/>
+      </div>
+      <div class="preloader-body">
+        <div id="loadingProgressG">
+          <div class="loadingProgressG" id="loadingProgressG_1"></div>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <header class="section novi-background page-header">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap"  style="height: 100px">
+          <nav class="rd-navbar rd-navbar-corporate" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-lg-stick-up="true" data-lg-stick-up-offset="100px" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xl-stick-up="true" data-xl-stick-up-offset="100px" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-xxl-stick-up-offset="100px" data-xxl-stick-up="true">
+            <div class="rd-navbar-aside-outer">
+              <div class="rd-navbar-aside">
+                <!-- RD Navbar Panel-->
+                <div class="rd-navbar-panel">
+                  <!-- RD Navbar Toggle-->
+                  <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
+                  <!-- RD Navbar Brand--> <a class="rd-navbar-brand" href="index.html"><img style="padding: 10px;" src="images/logos/5mLogo.png" alt="" width="100" height="70" srcset="images/logos/5mLogo.png"/></a>
+                </div>
+                <div class="rd-navbar-collapse">
+                  <button class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle="#rd-navbar-collapse-content-1"><span></span></button>
+                  <div class="rd-navbar-collapse-content" id="rd-navbar-collapse-content-1">
+                    <article class="unit align-items-center">
+                      <div class="unit-left"><span class="icon novi-icon icon-md icon-modern mdi mdi-phone"></span></div>
+                      <div class="unit-body">
+                        <ul class="list-0">
+                          <li><a class="link-default" href="tel:#">3571 456546</a></li>
+                          <li><a class="link-default" href="tel:#">3571 616286</a></li>
+                        </ul>
+                      </div>
+                    </article>
+                    <article class="unit align-items-center">
+                      <div class="unit-left"><span class="icon novi-icon icon-md icon-modern mdi mdi-map-marker"></span></div>
+                      <div class="unit-body"><a class="link-default" href="#">Almafuerte - Córdoba, Argentina</a></div>
+                    </article><a class="button button-gray-bordered button-winona" href="contacto.html">Contactar</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="rd-navbar-main-outer">
+              <div class="rd-navbar-main">
+                <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
+                  <!-- RD Navbar Nav-->
+                  <ul class="rd-navbar-nav">
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="nosotros.html">Sobre nosotros</a>
+                    </li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="loteo.html">Loteo</a>
+                    </li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <!--INICIO-->
+      <section class="section novi-background breadcrumbs-custom bg-image context-dark" style="background-image: url(images/lotes/loteo/loteo.jpg);">
+        <div class="breadcrumbs-custom-inner">
+          <div class="container breadcrumbs-custom-container">
+            <div class="breadcrumbs-custom-main">
+              <h6 class="breadcrumbs-custom-subtitle title-decorated" style="color: white;">Unidades</h6>
+              <h2 class="text-uppercase breadcrumbs-custom-title" style="color: white;">Unidades</h2>
+            </div>
+            <ul class="breadcrumbs-custom-path">
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!--MAPA DINAMICO-->
+      <section class="section novi-background section-md text-center">
+        <div class="container">
+            <div class="col-md-12 wow-outer">
+              <article class="post-modern wow slideInLeft map-container row">
+                <div id="map" class="col-12"></div>
+              </article>
+            </div>
+          </div>
+      </section>
+
+      <footer class="section novi-background footer-advanced" style="background-color: #6C9E90;">
+        <div class="footer-advanced-main">
+          <div class="container">
+            <div class="row row-50">
+              <div class="col-lg-6">
+                <h5 class="font-weight-bold text-uppercase text-white">Sobre nosotros</h5>
+                <p class="footer-advanced-text" style="color: white; font-size: 18px;">Somos cinco hermanos con una misión clara: ofrecer lotes ideales para la construcción de hogares en un entorno natural privilegiado, cerca del lago en Almafuerte. Creemos en la importancia de vivir rodeado de tranquilidad, naturaleza y con acceso a servicios que hagan la vida más cómoda.
+
+                  Cada lote ha sido seleccionado cuidadosamente para garantizar ubicaciones estratégicas, con vistas increíbles y excelente accesibilidad. Nos apasiona ayudar a quienes buscan construir su hogar en un lugar especial, combinando calidad, confianza y cercanía en cada paso del proceso.
+                  
+                  Si sueñas con tu casa cerca del lago, estamos aquí para hacerlo realidad.</p>
+              </div>
+              <div class="col-sm-0 col-md-0 col-lg-2">
+               
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-4">
+                <h5 class="font-weight-bold text-uppercase text-white">Galería</h5>
+                <div class="row row-x-10" data-lightgallery="group">
+                  <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/lotes/galeria/galeria1.JPG" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/lotes/galeria/galeria1.JPG" alt=""/>
+                      <div class="thumbnail-minimal-caption"></div></a></div>
+                  <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/lotes/galeria/galeria2.JPG" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/lotes/galeria/galeria2.JPG" alt=""/>
+                      <div class="thumbnail-minimal-caption"></div></a></div>
+                  <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/lotes/galeria/galeria3.JPG" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/lotes/galeria/galeria3.JPG" alt=""/>
+                      <div class="thumbnail-minimal-caption"></div></a></div>
+                  <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/lotes/galeria/galeria4.JPG" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/lotes/galeria/galeria4.JPG" alt=""/>
+                      <div class="thumbnail-minimal-caption"></div></a></div>
+                  <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/lotes/galeria/galeria5.JPG" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/lotes/galeria/galeria5.JPG" alt=""/>
+                      <div class="thumbnail-minimal-caption"></div></a></div>
+                  <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/lotes/galeria/galeria6.jpeg" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/lotes/galeria/galeria6.jpeg" alt=""/>
+                      <div class="thumbnail-minimal-caption"> </div></a></div>
+                  <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/lotes/galeria/galeria7.jpeg" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/lotes/galeria/galeria7.jpeg" alt=""/>
+                      <div class="thumbnail-minimal-caption"></div></a></div>
+                  <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/lotes/galeria/galeria8.jpeg" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/lotes/galeria/galeria8.jpeg" alt=""/>
+                      <div class="thumbnail-minimal-caption"></div></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-advanced-aside">
+          <div class="container">
+            <div class="footer-advanced-layout">
+              <div>
+                <ul class="list-nav"> 
+                  <li><a href="index.html" style="color: #fff;">Inicio</a></li>
+                  <li><a href="nosotros.html" style="color: #fff;">Sobre nosotros</a></li>
+                  <li><a href="loteo.html" style="color: #fff;">Loteo</a></li>
+                  <li><a href="contacto.html" style="color: #fff;">Contacto</a></li>
+                </ul>
+              </div>
+              <div>
+                <ul class="foter-social-links list-inline list-inline-md">
+                  <li><a href="https://www.instagram.com/balconesdelrioalmafuerte/"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="53" height="53" viewBox="0 0 48 48"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"></stop><stop offset=".328" stop-color="#ff543f"></stop><stop offset=".348" stop-color="#fc5245"></stop><stop offset=".504" stop-color="#e64771"></stop><stop offset=".643" stop-color="#d53e91"></stop><stop offset=".761" stop-color="#cc39a4"></stop><stop offset=".841" stop-color="#c837ab"></stop></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"></path><radialGradient id="yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"></stop><stop offset=".999" stop-color="#4168c9" stop-opacity="0"></stop></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"></path><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"></path><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"></circle><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"></path></svg></a></li>
+                  <li><a href="https://www.facebook.com/profile.php?id=100069320227230"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="url(#a)" height="40" width="40"><defs><linearGradient x1="50%" x2="50%" y1="97.078%" y2="0%" id="a"><stop offset="0%" stop-color="#0062E0"/><stop offset="100%" stop-color="#19AFFF"/></linearGradient></defs><path d="M15 35.8C6.5 34.3 0 26.9 0 18 0 8.1 8.1 0 18 0s18 8.1 18 18c0 8.9-6.5 16.3-15 17.8l-1-.8h-4l-1 .8z"/><path fill="#FFF" d="m25 23 .8-5H21v-3.5c0-1.4.5-2.5 2.7-2.5H26V7.4c-1.3-.2-2.7-.4-4-.4-4.1 0-7 2.5-7 7v4h-4.5v5H15v12.7c1 .2 2 .3 3 .3s2-.1 3-.3V23h4z"/></svg></a></li>
+                  <li><a href="https://api.whatsapp.com/send?phone=543571419908&"><svg viewBox="0 0 256 259" width="40" height="40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid"><path d="m67.663 221.823 4.185 2.093c17.44 10.463 36.971 15.346 56.503 15.346 61.385 0 111.609-50.224 111.609-111.609 0-29.297-11.859-57.897-32.785-78.824-20.927-20.927-48.83-32.785-78.824-32.785-61.385 0-111.61 50.224-110.912 112.307 0 20.926 6.278 41.156 16.741 58.594l2.79 4.186-11.16 41.156 41.853-10.464Z" fill="#00E676"/><path d="M219.033 37.668C195.316 13.254 162.531 0 129.048 0 57.898 0 .698 57.897 1.395 128.35c0 22.322 6.278 43.947 16.742 63.478L0 258.096l67.663-17.439c18.834 10.464 39.76 15.347 60.688 15.347 70.453 0 127.653-57.898 127.653-128.35 0-34.181-13.254-66.269-36.97-89.986ZM129.048 234.38c-18.834 0-37.668-4.882-53.712-14.648l-4.185-2.093-40.458 10.463 10.463-39.76-2.79-4.186C7.673 134.63 22.322 69.058 72.546 38.365c50.224-30.692 115.097-16.043 145.79 34.181 30.692 50.224 16.043 115.097-34.18 145.79-16.045 10.463-35.576 16.043-55.108 16.043Zm61.385-77.428-7.673-3.488s-11.16-4.883-18.136-8.371c-.698 0-1.395-.698-2.093-.698-2.093 0-3.488.698-4.883 1.396 0 0-.697.697-10.463 11.858-.698 1.395-2.093 2.093-3.488 2.093h-.698c-.697 0-2.092-.698-2.79-1.395l-3.488-1.395c-7.673-3.488-14.648-7.674-20.229-13.254-1.395-1.395-3.488-2.79-4.883-4.185-4.883-4.883-9.766-10.464-13.253-16.742l-.698-1.395c-.697-.698-.697-1.395-1.395-2.79 0-1.395 0-2.79.698-3.488 0 0 2.79-3.488 4.882-5.58 1.396-1.396 2.093-3.488 3.488-4.883 1.395-2.093 2.093-4.883 1.395-6.976-.697-3.488-9.068-22.322-11.16-26.507-1.396-2.093-2.79-2.79-4.883-3.488H83.01c-1.396 0-2.79.698-4.186.698l-.698.697c-1.395.698-2.79 2.093-4.185 2.79-1.395 1.396-2.093 2.79-3.488 4.186-4.883 6.278-7.673 13.951-7.673 21.624 0 5.58 1.395 11.161 3.488 16.044l.698 2.093c6.278 13.253 14.648 25.112 25.81 35.575l2.79 2.79c2.092 2.093 4.185 3.488 5.58 5.58 14.649 12.557 31.39 21.625 50.224 26.508 2.093.697 4.883.697 6.976 1.395h6.975c3.488 0 7.673-1.395 10.464-2.79 2.092-1.395 3.487-1.395 4.882-2.79l1.396-1.396c1.395-1.395 2.79-2.092 4.185-3.487 1.395-1.395 2.79-2.79 3.488-4.186 1.395-2.79 2.092-6.278 2.79-9.765v-4.883s-.698-.698-2.093-1.395Z" fill="#FFF"/></svg></a></li>
+                  <li><a href="https://www.youtube.com/@BalconesdelRio/videos"><svg viewBox="0 0 256 180" width="48" height="48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid"><path d="M250.346 28.075A32.18 32.18 0 0 0 227.69 5.418C207.824 0 127.87 0 127.87 0S47.912.164 28.046 5.582A32.18 32.18 0 0 0 5.39 28.24c-6.009 35.298-8.34 89.084.165 122.97a32.18 32.18 0 0 0 22.656 22.657c19.866 5.418 99.822 5.418 99.822 5.418s79.955 0 99.82-5.418a32.18 32.18 0 0 0 22.657-22.657c6.338-35.348 8.291-89.1-.164-123.134Z" fill="red"/><path fill="#FFF" d="m102.421 128.06 66.328-38.418-66.328-38.418z"/></svg></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <hr/>
+        </div>
+        <div class="footer-advanced-aside">
+          <div class="container">
+            <div class="footer-advanced-layout"><a class="brand" href="index.html"><img src="images/logos/5mLogoblanco2.svg" alt="" width="115" height="34" srcset="images/logos/5mLogoblanco2.svg"/></a>
+              <!-- Rights-->
+              <p class="rights" style="color: #fff;"><span style="color: #fff;">&copy;&nbsp;</span><span class="copyright-year" style="color: #fff;"></span>. Todos los derechos reservados. Desarrollado por <a href="#">Bóreas</a></p>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+    
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const parcelaId = parseInt(params.get("parcela"));
+      
+      const parcelasInfo = {
+        1: { superficie: "100m²", precio: "USD 50,000" },
+        2: { superficie: "120m²", precio: "USD 60,000" },
+        3: { superficie: "120m²", precio: "USD 60,000" },
+        4: { superficie: "120m²", precio: "USD 60,000" },
+        5: { superficie: "120m²", precio: "USD 60,000" },
+        6: { superficie: "120m²", precio: "USD 60,000" },
+        7: { superficie: "90m²", precio: "USD 45,000" }
+      };
+      
+      var parcelasSetView = [];
+      var bounds = [];
+      var imagen = "";
+      var altura = 16;
+      
+      if (!parcelaId || isNaN(parcelaId) || parcelaId < 1 || parcelaId > 7) {
+        console.error("Parcela ID no válida:", parcelaId);
+      } else {
+        console.log("Parcela seleccionada:", parcelaId);
+      
+        if (parcelaId == 1) {
+          parcelasSetView = [-32.15873703719681, -64.22334426238726];
+          bounds = [
+            [-32.15752242652545, -64.22418120101516],
+            [-32.15990884513941, -64.22239437932973]
+          ];
+          imagen = "images/lotes/parcelas/1.png";
+          altura = 17.5;
+        } 
+        else if (parcelaId == 2) {
+          parcelasSetView = [-32.159451876931264, -64.22465923926296];
+          bounds = [[-32.15814753971539, -64.22581257146535], [-32.16099772675734, -64.22367486197194]];
+          imagen = "images/lotes/parcelas/2.png";
+          altura = 17.5;
+        } 
+        else if (parcelaId == 3) {
+          parcelasSetView = [-32.161011050383664, -64.22462436639289];
+          bounds = [[-32.157183932560685, -64.2301744694621], [-32.16881881161713, -64.21945721170191]];
+          imagen = "images/lotes/parcelas/3.png";
+          altura = 17.5;
+        } 
+        else if (parcelaId == 4) {
+          parcelasSetView = [-32.16441217585499, -64.22467452116116];
+          bounds = [[-32.157183932560685, -64.2301744694621], [-32.16881881161713, -64.21945721170191]];
+          imagen = "images/lotes/parcelas/4.png";
+          altura = 17.5;
+        } 
+        else if (parcelaId == 5) {
+          parcelasSetView = [-32.16451355091388, -64.22600778869308];
+          bounds = [[-32.157183932560685, -64.2301744694621], [-32.16881881161713, -64.21945721170191]];
+          imagen = "images/lotes/parcelas/5.png";
+          altura = 17.5;
+        } 
+        else if (parcelaId == 6) {
+          parcelasSetView = [-32.16642160185758, -64.22545643484032];
+          bounds = [[-32.157183932560685, -64.2301744694621], [-32.16881881161713, -64.21945721170191]];
+          imagen = "images/lotes/parcelas/6.png";
+          altura = 17.5;
+        } 
+        else if (parcelaId == 7){
+          parcelasSetView = [-32.16636240848626, -64.22655778090696];
+          bounds = [[-32.157183932560685, -64.2301744694621], [-32.16881881161713, -64.21945721170191]];
+          imagen = "images/lotes/parcelas/7.png";
+          altura = 17.5;
+        } 
+  
+        var map = L.map('map', {
+          scrollWheelZoom: false
+        }).setView(parcelasSetView, altura);
+      
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        }).addTo(map);
+      
+        L.imageOverlay(imagen, bounds).addTo(map);
+      }
+      
+      function addPolygonWithHoverAndClick(coords, label, url, imgSrc) {
+        var defaultStyle = {
+            color: '#5271FF',
+            fillColor: '#A7C7E7',
+            fillOpacity: 0.3
+        };
+
+        var hoverStyle = {
+            color: '#E63946',
+            fillColor: '#FF6B6B',
+            fillOpacity: 0.4
+        };
+
+        var polygon = L.polygon(coords, defaultStyle).addTo(map);
+      
+        var popupContent = `
+            <div style="margin-bottom: 10px">
+                <span class="lote-label">${label}</span>
+            </div>
+            <div class="lote-image">
+                <img src="${imgSrc}" alt="${label}">
+            </div>
+            <div class="lote-info" style="margin-top: 30px">
+                <p>Superficie<span>--- m²</span></p>
+                <p>Entrega inicial<span>40%</span></p>
+                <div class="lote-footer">
+                    <a href="${url}" class="lote-btn" style="color: white">Ver más</a>
+                </div>
+            </div>
+        `;
+      
+        polygon.bindPopup(popupContent, { closeButton: true, autoPan: true });
+
+        polygon.on("mouseover", function () {
+            this.setStyle(hoverStyle);
+        });
+
+        polygon.on("mouseout", function () {
+            this.setStyle(defaultStyle);
+        });
+
+        polygon.on("click", function () {
+            this.openPopup();
+        });
+
+      }
+      
+      if (parcelaId == 1) {
+        /*var polygon1Coords = [
+          [-32.15826946235168, -64.22375540186738],
+          [-32.159798546966975, -64.2241424454189],
+          [-32.15982281794441, -64.22404687911015],
+          [-32.159713598494534, -64.2238270765995],
+          [-32.15962460477238, -64.22361205240371],
+          [-32.159559882010775, -64.223358801685],
+          [-32.15960033374215, -64.22307688107307],
+          [-32.15958415305172, -64.22299564971067],
+          [-32.15761008725873, -64.22246525669546],
+          [-32.157581770430696, -64.22248914827266],
+          [-32.15797011474138, -64.22346870294004],
+          [-32.15825732665644, -64.22375062355195]
+        ];
+        addPolygonWithHoverAndClick(polygon1Coords, "Parcela 1", "unidades.html?parcela=1", "images/lotes/galeria/galeria1.JPG");*/
+        // LOTES
+        var lote1Coords1 = [
+          [-32.157728797674245, -64.2229475218528],
+          [-32.157990928310745, -64.22300347962974],
+          [-32.15805409220596, -64.22262669726665],
+          [-32.15758667833936, -64.22249612912104],
+          [-32.15756035992044, -64.22252472976251],
+          [-32.157730903143964, -64.22294876535881]
+        ];
+        addPolygonWithHoverAndClick(lote1Coords1, "Lote 1", "#", "images/lotes/galeria/galeria1.JPG");
+        var lote1Coords2 = [
+          [-32.158078958934865, -64.22261758337629],
+          [-32.15836601188297, -64.22269347114877],
+          [-32.158292881812486, -64.22308098317913],
+          [-32.158011979783275, -64.22300993930719],
+          [-32.15807964239491, -64.22261758337629]
+        ];
+        addPolygonWithHoverAndClick(lote1Coords2, "Lote 2", "#", "images/lotes/galeria/galeria1.JPG");
+        var lote1Coords3 = [
+          [-32.158326120360684, -64.2230825178975],
+          [-32.15864557659417, -64.22316399109914],
+          [-32.158655257068595, -64.22316542045337],
+          [-32.15872060024423, -64.22279521766087],
+          [-32.15838783358387, -64.22271231510499],
+          [-32.15832007004259, -64.22308108854327],
+          [-32.15865404701008, -64.22316542045337]
+        ];
+        addPolygonWithHoverAndClick(lote1Coords3, "Lote 3", "#", "images/lotes/galeria/galeria1.JPG");
+        var lote1Coords4 = [
+          [-32.15869730262307, -64.223165705195],
+          [-32.15910855084008, -64.22325688696463],
+          [-32.15917509568407, -64.22291416927906],
+          [-32.15875586235354, -64.22280883861363],
+          [-32.15869730262307, -64.223165705195]
+        ];
+        addPolygonWithHoverAndClick(lote1Coords4, "Lote 4", "#", "images/lotes/galeria/galeria1.JPG");
+        var lote1Coords5 = [
+          [-32.15914764006093, -64.22326606134344],
+          [-32.15955438540854, -64.22337178978911],
+          [-32.15961783298681, -64.22306129612703],
+          [-32.15960537007298, -64.22301713107996],
+          [-32.159213353917444, -64.22291675597394],
+          [-32.15914764006093, -64.22326204633906]
+        ];
+        addPolygonWithHoverAndClick(lote1Coords5, "Lote 5", "#", "images/lotes/galeria/galeria1.JPG");
+        var lote1Coords6 = [
+          [-32.159299468920814, -64.22395107493239],
+          [-32.15981044870149, -64.22409561508545],
+          [-32.15983424148154, -64.22407420172954],
+          [-32.159842172406464, -64.22404208169567],
+          [-32.15977079405393, -64.22389486487344],
+          [-32.15973340537014, -64.22382527146605],
+          [-32.15968128778558, -64.22371017467768],
+          [-32.159639367098535, -64.22359775455848],
+          [-32.159586116467345, -64.22340637268981],
+          [-32.15941163546033, -64.22335685430379],
+          [-32.159299468920814, -64.22395107493239]
+        ];
+        addPolygonWithHoverAndClick(lote1Coords6, "Lote 6", "#", "images/lotes/galeria/galeria1.JPG");
+        var lote1Coords7 = [
+          [-32.1589368389607, -64.22386303196551],
+          [-32.15926540852624, -64.22394600872005],
+          [-32.15937191013122, -64.22336383310396],
+          [-32.15904447394815, -64.2232821946847],
+          [-32.1589368389607, -64.22386303196551]
+        ];
+        addPolygonWithHoverAndClick(lote1Coords7, "Lote 7", "#", "images/lotes/galeria/galeria1.JPG");
+        var lote1Coords8 = [
+          [-32.15858482409692, -64.22378573648764],
+          [-32.1589174585136, -64.22386828209744],
+          [-32.15902647289003, -64.22329046282994],
+          [-32.15868126025093, -64.22320131357142],
+          [-32.15857643834068, -64.22378573648764]
+        ];
+        addPolygonWithHoverAndClick(lote1Coords8, "Lote 8", "#", "images/lotes/galeria/galeria1.JPG");
+        var lote1Coords9 = [
+          [-32.15832079821624, -64.22312274077225],
+          [-32.158654750145644, -64.22320663972039],
+          [-32.15854509442336, -64.22377921324178],
+          [-32.15820864990505, -64.22368648282585],
+          [-32.15831830603212, -64.22311979694987]
+        ];
+        addPolygonWithHoverAndClick(lote1Coords9, "Lote 9", "#", "images/lotes/galeria/galeria1.JPG");
+        var lote1Coords10 = [
+          [-32.15817706987057, -64.22365667970534],
+          [-32.15828730930663, -64.22311492713166],
+          [-32.15774846975936, -64.2229752446924],
+          [-32.15794710958035, -64.22346417331846],
+          [-32.15817694883306, -64.2236570421482]
+        ];
+        addPolygonWithHoverAndClick(lote1Coords10, "Lote 10", "#", "images/lotes/galeria/galeria1.JPG");
+      } else if (parcelaId == 2) {
+        /*var polygon2Coords =[
+          [-32.15858741927462, -64.22504499802442],
+          [-32.1608228942271, -64.22557784011256],
+          [-32.16085482918616, -64.22529491510979],
+          [-32.16035983606138, -64.22450744051956],
+          [-32.16014826559943, -64.22432825468462],
+          [-32.15832710533959, -64.2238930477841],
+          [-32.158267225620804, -64.22394491736773],
+          [-32.1583350892991, -64.22434101237174],
+          [-32.15858658366493, -64.22504360946147]
+        ]
+        addPolygonWithHoverAndClick(polygon2Coords, "Parcela 2", "unidades.html?parcela=2", "images/lotes/galeria/galeria1.JPG");*/
+        // LOTES
+        var lote2Coords1 = [
+        ];
+        addPolygonWithHoverAndClick(lote2Coords1, "Lote 1", "#", "images/lotes/galeria/galeria1.JPG");
+        var lote2Coords2 = [
+        ];
+        addPolygonWithHoverAndClick(lote2Coords2, "Lote 2", "#", "images/lotes/galeria/galeria1.JPG");
+        var lote2Coords3 = [
+        ];
+        addPolygonWithHoverAndClick(lote2Coords3, "Lote 3", "#", "images/lotes/galeria/galeria1.JPG");
+        var lote2Coords4 = [
+        ];
+        addPolygonWithHoverAndClick(lote2Coords4, "Lote 4", "#", "images/lotes/galeria/galeria1.JPG");
+        var lote2Coords5 = [
+        ];
+        addPolygonWithHoverAndClick(lote2Coords5, "Lote 5", "#", "images/lotes/galeria/galeria1.JPG");
+        var lote2Coords6 = [
+        ];
+        addPolygonWithHoverAndClick(lote2Coords6, "Lote 6", "#", "images/lotes/galeria/galeria1.JPG");
+        var lote2Coords7 = [
+        ];
+        addPolygonWithHoverAndClick(lote2Coords7, "Lote 7", "#", "images/lotes/galeria/galeria1.JPG");
+        var lote2Coords8 = [
+        ];
+        addPolygonWithHoverAndClick(lote2Coords8, "Lote 8", "#", "images/lotes/galeria/galeria1.JPG");
+        var lote2Coords9 = [
+        ];
+        addPolygonWithHoverAndClick(lote2Coords9, "Lote 9", "#", "images/lotes/galeria/galeria1.JPG");
+        var lote2Coords10 = [
+          
+        ];
+        addPolygonWithHoverAndClick(lote2Coords10, "Lote 10", "#", "images/lotes/galeria/galeria1.JPG");
+        var lote2Coords11 = [
+          
+        ];
+        addPolygonWithHoverAndClick(lote2Coords11, "Lote 11", "#", "images/lotes/galeria/galeria1.JPG");
+      } else if (parcelaId == 3) {
+        var polygon3Coords = [
+          [-32.16034033474579, -64.2244300438013],
+          [-32.16113338497266, -64.22567129530097],
+          [-32.16129199418932, -64.22565958538122],
+          [-32.16133164645033, -64.22494528027252],
+          [-32.16172816811397, -64.22410216604638],
+          [-32.16109373262537, -64.22406703628708],
+          [-32.16075668697543, -64.22389138748983],
+          [-32.16047911903327, -64.22409045612659],
+          [-32.16034033474579, -64.22441833388152]
+        ];
+        addPolygonWithHoverAndClick(polygon3Coords, "Parcela 3", "unidades.html?parcela=3", "images/lotes/galeria/galeria1.JPG");
+      } else if (parcelaId == 4) {
+        var polygon4Coords = [
+          [-32.16309433657147, -64.2248497418879],
+          [-32.163183588918606, -64.22448072830265],
+          [-32.16300508413577, -64.22411171471744],
+          [-32.163049710365115, -64.22387976332115],
+          [-32.165789718914716, -64.22456507426467],
+          [-32.165637994212574, -64.22553505283143],
+          [-32.163130037520794, -64.22487082837839]
+        ];
+        addPolygonWithHoverAndClick(polygon4Coords, "Parcela 4", "unidades.html?parcela=4", "images/lotes/galeria/galeria1.JPG");
+      } else if (parcelaId == 5) {
+        var polygon5Coords = [
+          [-32.163266592656896, -64.22553505970382],
+          [-32.16313271422535, -64.22515550287332],
+          [-32.16557819589337, -64.22575646785546],
+          [-32.165426470839, -64.22680024913899],
+          [-32.1639538321777, -64.22642069230851],
+          [-32.16394490702233, -64.22607276521377],
+          [-32.163409396101514, -64.22547180023228],
+          [-32.163275517878674, -64.22557723268548]
+        ];
+        addPolygonWithHoverAndClick(polygon5Coords, "Parcela 5", "unidades.html?parcela=5", "images/lotes/galeria/galeria1.JPG");
+      } else if (parcelaId == 6) {
+        var polygon6Coords = [
+          [-32.16576274458833, -64.22560100477635],
+          [-32.16699413462859, -64.22591723830212],
+          [-32.167083365143874, -64.22531639460294],
+          [-32.165851976309725, -64.22504232554773],
+          [-32.16576274458833, -64.22561154589381]
+        ];
+        addPolygonWithHoverAndClick(polygon6Coords, "Parcela 6", "unidades.html?parcela=6", "images/lotes/galeria/galeria1.JPG");
+      } else if (parcelaId == 7) {
+        var polygon7Coords = [
+          [-32.16556821724358, -64.2268290374059],
+          [-32.16571991144294, -64.22583817235855],
+          [-32.166844225276996, -64.22612278253192],
+          [-32.16680853298771, -64.22650226276261],
+          [-32.16737960794088, -64.22664983840804],
+          [-32.16727253166026, -64.22730338769401],
+          [-32.165559294047654, -64.22685011964087]
+        ];
+        addPolygonWithHoverAndClick(polygon7Coords, "Parcela 7", "unidades.html?parcela=7", "images/lotes/galeria/galeria1.JPG");
+      }
+
+    </script>    
+  </body>
+</html>
