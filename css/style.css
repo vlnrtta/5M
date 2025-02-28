@@ -9140,7 +9140,7 @@ html:not(.lt-ie10) .not-animated {
 	height: 48px;
 	border-radius: 6px;
 	color: #fff;
-	background: #063024;
+	background: #29293A;
 	overflow: hidden;
 	text-align: center;
 	text-decoration: none;
@@ -9182,7 +9182,7 @@ html:not(.lt-ie10) .not-animated {
 
 .ui-to-top:hover {
 	color: #fff;
-	background: #0630248c;
+	background: #59596e;
 	text-decoration: none;
 }
 

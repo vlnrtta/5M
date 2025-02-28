@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width height=device-height initial-scale=1.0 maximum-scale=1.0 user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <link rel="icon" href="images/logos/5mLogo.svg" type="image/x-icon">
+    <link rel="icon" href="images/logos/5mLogoBlanco2.svg" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800%7CPoppins:300,400,700">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/fonts.css">
@@ -154,7 +154,7 @@
       </header>
       
       <!--INICIO-->
-      <section class="section novi-background breadcrumbs-custom bg-image context-dark" style="background-image: url(images/lotes/loteo/loteo.jpg);">
+      <section class="section novi-background breadcrumbs-custom bg-primary-darker context-dark" style="background-image: url(images/lotes/loteo/loteo.png);">
         <div class="breadcrumbs-custom-inner">
           <div class="container breadcrumbs-custom-container">
             <div class="breadcrumbs-custom-main">
@@ -217,11 +217,11 @@
                       <div class="thumbnail-minimal-caption"></div></a></div>
                   <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/lotes/galeria/galeria5.JPG" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/lotes/galeria/galeria5.JPG" alt=""/>
                       <div class="thumbnail-minimal-caption"></div></a></div>
-                  <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/lotes/galeria/galeria6.jpeg" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/lotes/galeria/galeria6.jpeg" alt=""/>
+                  <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/lotes/galeria/galeria6.jpg" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/lotes/galeria/galeria6.jpg" alt=""/>
                       <div class="thumbnail-minimal-caption"> </div></a></div>
-                  <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/lotes/galeria/galeria7.jpeg" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/lotes/galeria/galeria7.jpeg" alt=""/>
+                  <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/lotes/galeria/galeria7.jpg" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/lotes/galeria/galeria7.jpg" alt=""/>
                       <div class="thumbnail-minimal-caption"></div></a></div>
-                  <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/lotes/galeria/galeria8.jpeg" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/lotes/galeria/galeria8.jpeg" alt=""/>
+                  <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/lotes/galeria/galeria8.jpg" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/lotes/galeria/galeria8.jpg" alt=""/>
                       <div class="thumbnail-minimal-caption"></div></a></div>
                 </div>
               </div>
@@ -270,19 +270,19 @@
       // Crear el mapa centrado en la ubicación
       var map = L.map('map', {
         scrollWheelZoom: false
-      }).setView([-32.162758054448155, -64.22485252123101], 16);
+      }).setView([-32.162758054448155, -64.22485252123101], 17);
     
       L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
       }).addTo(map);
     
       // Definir las coordenadas de la imagen
       var bounds = [
-        [-32.15729871633888, -64.23055931896818],  // Superior izquierda [-32.15729871633888, -64.23055931896818],
-        [-32.168694513543784, -64.21929799377229]   // Inferior derecha [-32.168694513543784, -64.21929799377229]
+        [-32.157335849453915, -64.23081324400688],  // Superior izquierda [-32.15729871633888, -64.23055931896818],
+        [-32.1687192766118, -64.21944069378199]   // Inferior derecha [-32.168694513543784, -64.21929799377229]
       ];
     
       // Superponer la imagen del loteo
-      L.imageOverlay('images/lotes/loteo/parcelas3.png', bounds).addTo(map);
+      L.imageOverlay('images/lotes/loteo/parcelas.png', bounds).addTo(map);
     
       function addPolygonWithHoverAndClick(coords, label, url, imgSrc, color) {
         var defaultStyle = {
