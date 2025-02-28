@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css" id="main-styles-link">
-    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -27,9 +26,6 @@
         height: 490px;
         width: 100%;
         border-radius: 10px;
-      }
-      body {
-        font-family: "Onest";
       }
       .lote-label {
         width: fit-content;
@@ -148,7 +144,7 @@
       </header>
 
       <!--INICIO-->
-      <section class="section novi-background breadcrumbs-custom bg-primary-darker context-dark" style="background-image: url(images/lotes/loteo/loteo.png);">
+      <section style="background-color: #29293A;">
         <div class="breadcrumbs-custom-inner">
           <div class="container breadcrumbs-custom-container">
             <div class="breadcrumbs-custom-main">
@@ -161,16 +157,27 @@
         </div>
       </section>
 
-      <!--MAPA DINAMICO-->
-      <section class="section novi-background section-md text-center">
+      <section class="section novi-background section-lg text-center">
         <div class="container">
-            <div class="col-md-12 wow-outer">
-              <article class="post-modern wow slideInLeft map-container row">
-                <div id="map" class="col-12"></div>
-              </article>
-            </div>
-          </div>
+            <h3 class="text-uppercase" style="color:#6C9E90; font-weight: 200;">Cómo será Balcones del Río II</h3>
+            <p><span class="text-width-1">Clickea una parcela para obtener mas información</span></p>
+        </div>
       </section>
+      
+      <!--MAPA DINAMICO-->
+      <div style="background-color: #6C9E90;">
+        <div style="height: 60px; justify-content: center; display: flex; align-items: center;"><a class="brand" href="index.html"><img style="padding: 10px" src="images/logos/5mLogoblanco2.svg" alt="" width="85" height="34" srcset="images/logos/5mLogoblanco2.svg"/></a></div>
+        <div class="justify-content-center justify-content-lg-between flex-lg-row-reverse">
+          <div class="row">
+            <div id="map"></div>
+            <!--<div class="col-md-12 col-lg-4 col-xl-6">
+            <h3 class="text-uppercase wow-outer"><span class="wow slideInUp" style="padding-top: 20px; color:white; font-weight: 700;">Mapa dinámico</span></h3>
+            <p class="about-subtitle" style="color: white;">Recorré el mapa y obtené la información necesaria sobre cada lote haciendo click en 'Ver más'.</p>
+            </div>-->
+          </div>
+        </div>
+        <div style="height: 100px; justify-content: center; display: flex; align-items: center;"></div>
+      </div>
 
       <footer class="section novi-background footer-advanced" style="background-color: #6C9E90;">
         <div class="footer-advanced-main">
@@ -281,7 +288,7 @@
             [-32.15990884513941, -64.22239437932973]
           ];
           imagen = "images/lotes/parcelas/1.png";
-          altura = 17.5;
+          altura = 17;
         } 
         else if (parcelaId == 2) {
           parcelasSetView = [-32.159451876931264, -64.22465923926296];

@@ -21,10 +21,6 @@
     <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-      body {
-        font-family: "Onest";
-      }
-
       #map {
         height: 550px;
         width: 100%;
@@ -154,7 +150,7 @@
       </header>
       
       <!--INICIO-->
-      <section class="section novi-background breadcrumbs-custom bg-primary-darker context-dark" style="background-image: url(images/lotes/loteo/loteo.png);">
+      <section style="background-color: #29293A;">
         <div class="breadcrumbs-custom-inner">
           <div class="container breadcrumbs-custom-container">
             <div class="breadcrumbs-custom-main">
@@ -270,7 +266,7 @@
       // Crear el mapa centrado en la ubicación
       var map = L.map('map', {
         scrollWheelZoom: false
-      }).setView([-32.162758054448155, -64.22485252123101], 17);
+      }).setView([-32.162758054448155, -64.22485252123101], 16);
     
       L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
       }).addTo(map);
@@ -299,23 +295,7 @@
 
         var polygon = L.polygon(coords, defaultStyle).addTo(map);
 
-        var popupContent = `
-            <div style="margin-bottom: 10px">
-                <span class="lote-label">${label}</span>
-            </div>
-            <div class="lote-image">
-                <img src="${imgSrc}" alt="${label}">
-            </div>
-            <div class="lote-info" style="margin-top: 30px">
-                <p>Superficie<span>--- m²</span></p>
-                <p>Entrega inicial<span>40%</span></p>
-                <div class="lote-footer">
-                    <a href="${url}" class="lote-btn" style="color: white">Ver más</a>
-                </div>
-            </div>
-        `;
-
-        polygon.bindPopup(popupContent, { closeButton: true, autoPan: true });
+        //polygon.bindPopup(popupContent, { closeButton: true, autoPan: true });
 
         polygon.on("mouseover", function () {
             this.setStyle(hoverStyle);
@@ -326,7 +306,7 @@
         });
 
         polygon.on("click", function () {
-            this.openPopup();
+          window.open(url, '_blank');
         });
       
       }   
