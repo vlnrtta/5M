@@ -82,6 +82,11 @@
         text-align: right;
       }
 
+      @media (max-width: 1024px) {
+        .desktop-only {
+          display: none;
+        }
+      }
     </style>
   </head>
   <body>
@@ -150,17 +155,17 @@
       </header>
       
       <!--INICIO-->
-      <section style="background-color: #29293A;">
-        <div class="breadcrumbs-custom-inner">
+      <section class="desktop-only" style="background-color: #29293A;">
+        <!--<div class="breadcrumbs-custom-inner">
           <div class="container breadcrumbs-custom-container">
             <div class="breadcrumbs-custom-main">
-              <h6 class="breadcrumbs-custom-subtitle title-decorated" style="color: white;">Loteo</h6>
-              <h2 class="text-uppercase breadcrumbs-custom-title" style="color: white;">Loteo</h2>
-            </div>
+              <h6 class="breadcrumbs-custom-subtitle title-decorated" style="color: white; padding: 20px 40px; display: flex; align-items: center;">Loteo</h6>-->
+              <h2 class="text-uppercase breadcrumbs-custom-title" style="height: 56px;"></h2>
+            <!--</div>
             <ul class="breadcrumbs-custom-path">
             </ul>
           </div>
-        </div>
+        </div>-->
       </section>
       
       <section class="section novi-background section-lg text-center">
